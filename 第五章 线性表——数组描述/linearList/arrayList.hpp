@@ -63,7 +63,21 @@ public:
 	int last_inexOf(T the_element);
 	// 颠倒元素顺序
 	void reverse();
-	
+	// 元素左移
+	void left_shift(int num);
+	// 元素循环左移
+	void circular_shift(int num);
+	// 列表元素间隔删除
+	void half();
+	// 合并两个列表，交替填充
+	void meld(ArrayList<T>& the_list1, ArrayList<T>& the_list2);
+	// 合并两个有序列表，从左到右非递减有序
+	void merge(ArrayList<T>& the_list1, ArrayList<T>& the_list2);
+	// 将线性表按照奇偶位置拆解
+	void split(ArrayList<T>& the_list1, ArrayList<T>& the_list2);
+
+
+
 	// 开始迭代器
 	iterator begin() { return iterator(element); }
 	// 结束迭代器
@@ -439,7 +453,7 @@ void ArrayList<T>::reverse() {
 		}
 	}
 	else {
-		for (int i = 0; i < list_size / 2 - 1; i++) {
+		for (int i = 0; i < list_size / 2; i++) {
 			temp = this->element[i];
 			this->element[i] = this->element[list_size - i - 1];
 			this->element[list_size - i - 1] = temp;
@@ -447,8 +461,132 @@ void ArrayList<T>::reverse() {
 	}
 }
 
+/// <summary>
+/// 元素左移
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="num"></param>
+template<class T>
+void ArrayList<T>::left_shift(int num) {
+	check_index(num);
+
+	copy(element + num, element + list_size, element);
+	for (int i = 0; i < num; i++) {
+		element[list_size - num - 1 + i].~T();
+	}
+	list_size -= num;
+}
+/// <summary>
+///  元素循环左移
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="num"></param>
+template<class T>
+void ArrayList<T>::circular_shift(int num) {
+	check_index(num);
+	
+	// 采用三次颠倒的方式实现
+	// 颠倒全部元素
+	this->reverse();
+	int list = list_size;
+	list_size -= (num);
+	this->reverse();
+	element += list_size;
+	list_size = num;
+	this->reverse();
+	element -= list_size;
+	list_size = list;
+}
 
 
+/// <summary>
+/// 列表元素间隔删除
+/// </summary>
+/// <typeparam name="T"></typeparam>
+template<class T>
+void ArrayList<T>::half() {
+	int num = list_size / 2;
+	for (int i = 0; i < list_size - num - 1; i++) {
+		copy(element + 2 * (i + 1), element + 2 * (i + 1)+1, element + 1 + i);
+	}
+	for (int i = 0; i < num; i++) {
+		element[list_size - num + 1 + i].~T();
+	}
+	list_size -= num;
+}
+
+/// <summary>
+/// 合并两个列表，交替填充
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="array1"></param>
+/// <param name="array2"></param>
+template<class T>
+void ArrayList<T>::meld(ArrayList<T>& the_list1, ArrayList<T>& the_list2) {
+	int min_length = min(the_list1.list_size, the_list2.list_size);
+	if (the_list1.list_size > the_list2.list_size) {
+		for (int i = 0; i < min_length; i++) {
+			push_back(the_list1[i]);
+			push_back(the_list2[i]);
+		}
+		for (int i = 0; i < the_list1.list_size - the_list2.list_size; i++) {
+			push_back(the_list1[min_length + i]);
+		}
+
+	}
+	else {
+		for (int i = 0; i < min_length; i++) {
+			push_back(the_list1[i]);
+			push_back(the_list2[i]);
+		}
+		for (int i = 0; i < the_list2.list_size - the_list1.list_size; i++) {
+			push_back(the_list2[min_length + i]);
+		}
+	}
+}
+
+
+/// <summary>
+/// 合并两个有序列表，从左到右非递减有序
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="the_list1"></param>
+/// <param name="the_list2"></param>
+template<class T>
+void ArrayList<T>::merge(ArrayList<T>& the_list1, ArrayList<T>& the_list2) {
+	T temp1;
+	T temp2;
+	int list1 = 1;
+	int list2 = 1;
+	temp1 = the_list1[0];
+	temp2 = the_list2[0];
+	for (int i = 0; i < the_list1.list_size + the_list2.list_size; i++) {
+		
+		if (temp1 >= temp2 && list1 <= the_list1.list_size) {
+			this->push_back(temp1);
+			temp1 = the_list1[list1];
+			list1++;
+		}
+		else if (temp1 < temp2 && list2 <= the_list2.list_size) {
+			this->push_back(temp2);
+			temp2 = the_list2[list2];
+			list2++;
+		}
+	}
+}
+
+// 将线性表按照奇偶位置拆解
+template<class T>
+void ArrayList<T>::split(ArrayList<T>& the_list1, ArrayList<T>& the_list2) {
+	for (int i = 0; i < this->list_size; i++) {
+		if (i % 2 == 0) {
+			the_list1.push_back(this->element[i]);
+		}
+		else {
+			the_list2.push_back(this->element[i]);
+		}
+	}
+}
 
 #pragma endregion
 

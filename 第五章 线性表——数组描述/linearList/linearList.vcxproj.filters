@@ -15,7 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="arrayListmain.cpp">
+    <ClCompile Include="arrayListTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="vectorListTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +36,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="arrayList_iterator.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vectorList.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arrayListTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vectorListTest.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

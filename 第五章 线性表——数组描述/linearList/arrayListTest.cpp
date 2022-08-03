@@ -1,11 +1,10 @@
 ﻿// linearList.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include <iostream>
-#include "arrayList.hpp"
+#include "arrayListTest.h"
 
 
-int main()
+void test_arrayList()
 {
     std::cout << "Arraylist Test!\n";
     ArrayList<int> array(100);
@@ -200,5 +199,107 @@ int main()
     std::cout << "c3.reverse(): " << std::endl;
     c3.reverse();
     std::cout << c3 << std::endl;
+
+    // Q23: 元素左移
+    std::cout << "Q23测试：" << std::endl;
+    std::cout << "c3: " << std::endl;
+    std::cout << c3 << std::endl;
+    std::cout << "c3.left_shift(5): " << std::endl;
+    c3.left_shift(5);
+    std::cout << c3 << std::endl;
+
+    // Q24: 查找元素出现的最后索引
+    std::cout << "Q24测试：" << std::endl;
+    ArrayList<char> c4(50);
+    c4.push_back('w');
+    c4.push_back('r');
+    c4.push_back('y');
+    c4.push_back('v');
+    c4.push_back('w');
+    c4.push_back('u');
+    c4.push_back('q');
+    c4.push_back('c');
+    c4.push_back('c');
+    c4.push_back('k');
+    std::cout << "c4: " << std::endl;
+    std::cout << c4 << std::endl;
+    c4.circular_shift(5);
+    std::cout << "c4.circular_shift(5): " << std::endl;
+    std::cout << c4 << std::endl;
+
+    // Q25: 删除一半元素
+    std::cout << "Q25测试：" << std::endl;
+    ArrayList<int> d2(50);
+    for (int i = 0; i < 50; i++) {
+        d2.insert(i, i);
+    }
+    std::cout << "d2: " << std::endl;
+    std::cout << d2 << std::endl;
+    d2.half();
+    std::cout << "d2: " << std::endl;
+    std::cout << d2 << std::endl;
+    ArrayList<int> d3(50);
+    for (int i = 0; i < 9; i++) {
+        d3.insert(i, i);
+    }
+    std::cout << "d3: " << std::endl;
+    std::cout << d3 << std::endl;
+    d3.half();
+    std::cout << "d3: " << std::endl;
+    std::cout << d3 << std::endl;
+
+    // Q28: 合并两个列表，交替填充
+    std::cout << "Q28测试：" << std::endl;
+
+    ArrayList<int> d4(50);
+    for (int i = 0; i < 30; i++) {
+        d4.insert(i, i);
+    }
+    ArrayList<int> d5(50);
+    for (int i = 0; i < 40; i++) {
+        d5.insert(i, 100+i);
+    }
+    ArrayList<int> d6(50);
+    std::cout << "d4: " << std::endl;
+    std::cout << d4 << std::endl;
+    std::cout << "d5: " << std::endl;
+    std::cout << d5 << std::endl;
+
+    d6.meld(d4, d5);
+    std::cout << "d6: " << std::endl;
+    std::cout << d6 << std::endl;
+
+    // Q29: 合并两个有序列表，从左到右非递减有序
+    std::cout << "Q29测试：" << std::endl;
+    ArrayList<int> d7(50);
+    for (int i = 0; i < 30; i++) {
+        d7.insert(i, 90-3*i);
+    }
+    ArrayList<int> d8(50);
+    for (int i = 0; i < 40; i++) {
+        d8.insert(i, 50-i);
+    }
+    ArrayList<int> d9(50);
+    std::cout << "d7: " << std::endl;
+    std::cout << d7 << std::endl;
+    std::cout << "d8: " << std::endl;
+    std::cout << d8 << std::endl;
+
+    d9.merge(d7, d8);
+    std::cout << "d9: " << std::endl;
+    std::cout << d9 << std::endl;
+    std::cout << d9.size() << std::endl;
+
+    // Q30: 将线性表按照奇偶位置拆解
+    std::cout << "Q30测试：" << std::endl;
+    ArrayList<int> d10(50);
+    ArrayList<int> d11(50);
+    d7.split(d10, d11);
+    std::cout << "d7: " << std::endl;
+    std::cout << d7 << std::endl;
+    std::cout << "d10: " << std::endl;
+    std::cout << d10 << std::endl;
+    std::cout << "11: " << std::endl;
+    std::cout << d11 << std::endl;
 }
 

@@ -24,7 +24,7 @@
     <ProjectGuid>{77f21cda-3b56-415c-b799-0bae8fd085c4}</ProjectGuid>
     <RootNamespace>linearList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>ArrayList</ProjectName>
+    <ProjectName>LinearList</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -129,13 +129,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="arrayListmain.cpp" />
+    <ClCompile Include="arrayListTest.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="vectorListTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arrayList.hpp" />
+    <ClInclude Include="arrayListTest.h" />
     <ClInclude Include="illegalParameterValue.h" />
     <ClInclude Include="arrayList_iterator.hpp" />
     <ClInclude Include="linearList.h" />
+    <ClInclude Include="vectorList.hpp" />
+    <ClInclude Include="vectorListTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

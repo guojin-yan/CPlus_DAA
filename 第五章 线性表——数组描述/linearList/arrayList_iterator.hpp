@@ -1,13 +1,14 @@
 #pragma once
 
+#include <iostream>
 template<class T>
 class ArrayList_iterator {
 public:
-	/*typedef bidirectional_iterator_tag iterator_category;
-	typedef T value_type;
-	typedef ptrdiff_t difference_type;
-	typedef T* pointer;
-	typedef T& reference;*/
+	//typedef bidirectional_iterator_tag iterator_category;
+	//typedef T value_type;
+	//typedef ptrdiff_t difference_type;
+	//typedef T* pointer;
+	//typedef T& reference;
 
 	// ¹¹Ôìº¯Êý
 	ArrayList_iterator(T* the_position) { position = the_position; }
