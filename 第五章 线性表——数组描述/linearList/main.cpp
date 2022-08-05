@@ -1,8 +1,8 @@
 #include <iostream>
 #include "arrayListTest.h"
-#include "vetcorListTest.h"
+#include "vectorListTest.h"
 
 int main() {
 	//test_arrayList();
-	vetcorList();
+	vectorList();
 }
