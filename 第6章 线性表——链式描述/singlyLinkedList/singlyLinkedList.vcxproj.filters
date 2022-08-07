@@ -19,4 +19,30 @@
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="chain_node.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chain.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="illegalParameterValue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chain_iterator.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arrayList.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arrayList_iterator.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="linearList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="common.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

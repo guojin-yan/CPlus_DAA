@@ -129,6 +129,16 @@
   <ItemGroup>
     <ClCompile Include="singlyLinkedList.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="arrayList.hpp" />
+    <ClInclude Include="arrayList_iterator.hpp" />
+    <ClInclude Include="chain.hpp" />
+    <ClInclude Include="chain_iterator.hpp" />
+    <ClInclude Include="chain_node.hpp" />
+    <ClInclude Include="common.hpp" />
+    <ClInclude Include="illegalParameterValue.h" />
+    <ClInclude Include="linearList.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
