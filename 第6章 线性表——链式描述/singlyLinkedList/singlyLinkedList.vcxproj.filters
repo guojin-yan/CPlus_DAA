@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="chain_node.hpp">
+    <ClInclude Include="chain_node.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="chain.hpp">
@@ -42,6 +42,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="common.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="chain_extend.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

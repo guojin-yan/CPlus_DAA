@@ -134,10 +134,11 @@
     <ClInclude Include="arrayList_iterator.hpp" />
     <ClInclude Include="chain.hpp" />
     <ClInclude Include="chain_iterator.hpp" />
-    <ClInclude Include="chain_node.hpp" />
+    <ClInclude Include="chain_node.h" />
     <ClInclude Include="common.hpp" />
     <ClInclude Include="illegalParameterValue.h" />
     <ClInclude Include="linearList.h" />
+    <ClInclude Include="chain_extend.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
