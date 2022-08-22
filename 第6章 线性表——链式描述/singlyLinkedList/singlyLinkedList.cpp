@@ -204,4 +204,16 @@ int main()
     e7.merge(e3, e4);
     std::cout << "e7 = : " << e7 << std::endl;
     std::cout << "e7 = : " << e7.size() << std::endl;
+
+
+    // Q20测试：循环左移
+    std::cout << "Q20测试：循环左移" << std::endl;
+    Chain<char> e8(100);
+    for (int i = 0; i < 26; i++) {
+        s7 = (int)'a' + (char)i;
+        e8.insret(i, s7);
+    }
+    e8.circular_shift(5);
+    std::cout << "e8 = : " << e8 << std::endl;
+
 }

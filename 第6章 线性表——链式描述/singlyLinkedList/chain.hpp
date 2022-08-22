@@ -473,6 +473,19 @@ void Chain<T>::spilt(Chain<T>& the_list1, Chain<T>& the_list2) {
 // Ñ­»·×óÒÆÔªËØ
 template<class T>
 void Chain<T>::circular_shift(int index) {
+
+	ChainNode<T>* current_node = first_node;
+	ChainNode<T>* current_node1 = first_node;
+	for (int i = 0; i < index - 1; i++) {
+		current_node = current_node->next;
+	}
+	first_node = current_node->next;
+	current_node->next = NULL;
+	current_node = first_node;
+	for (int i = 0; i < list_size - index-2; i++) {
+		current_node = current_node->next;
+	}
+	current_node->next = current_node1;
 }
 
 
